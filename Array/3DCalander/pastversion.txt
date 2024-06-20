@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+int main() {
+    int cal[12][5][7];
+    int i,j,k;
+
+    for(i=0; i<12; i++)
+    {
+        for(j=0; j<5; j++)
+        {
+            for(k=0; k<7; k++)
+            {
+                if(k == 5 || k == 6)
+                {
+                    cal[i][j][k] = 100;
+                } else if (k == 0 || k == 2)
+                {
+                    cal[i][j][k] = 50;
+                } else
+                {
+                    cal[i][j][k] = 0;
+                }
+            }
+        }
+
+    }
+
+    for(i=0; i<12; i++)
+    {
+        printf("\n\n\n");
+        switch(i)
+        {
+            case 0: printf("Month %d : January  \n\n", i+1); break;
+            case 1: printf("Month %d : February  \n\n", i+1); break;
+            case 2: printf("Month %d : March  \n\n", i+1); break;
+            case 3: printf("Month %d : April  \n\n", i+1); break;
+            case 4: printf("Month %d : May  \n\n", i+1); break;
+            case 5: printf("Month %d : June  \n\n", i+1); break;
+            case 6: printf("Month %d : July  \n\n", i+1); break;
+            case 7: printf("Month %d : August  \n\n", i+1); break;
+            case 8: printf("Month %d : September  \n\n", i+1); break;
+            case 9: printf("Month %d : October  \n\n", i+1); break;
+            case 10: printf("Month %d : November  \n\n", i+1); break;
+            case 11: printf("Month %d : December  \n\n", i+1); break;
+            default: printf("Invalid");
+        }
+
+        for(j=0; j<5; j++)
+        {
+            for(k=0; k<7; k++)
+            {
+                if(cal[i][j][k] == 100)
+                {
+                    printf("Off ");
+                } else if (cal[i][j][k] == 50)
+                {
+                    printf("Class ");
+                } else
+                {
+                    printf("Ok ");
+                }
+            }
+            printf("\n");
+        }
+    }
+
+
+    return 0;
+}
